@@ -1,0 +1,10 @@
+project: savantenvs/json-c
+target: json_pointer_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/json_pointer_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/json_pointer_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/json_pointer_fuzzer/json_pointer_fuzzer.dict
+    timeout: 5
